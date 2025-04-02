@@ -27,7 +27,7 @@ class GameList extends SimplePage implements HasTable
     public function table(Table $table): Table
     {
         return $table
-            ->query(Game::query())
+            ->query(Game::where('status', 'active'))
             ->columns([
                 Tables\Columns\ImageColumn::make('image_url')
                     ->circular()
