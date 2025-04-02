@@ -60,15 +60,19 @@ class GameDetail extends SimplePage
                         TextEntry::make('category.name')
                             ->badge()
                             ->label(''),
+                        TextEntry::make('user.name')
+                            ->label('Author')
+                            ->badge()
+                            ->extraAttributes(['class' => 'text-sm']),
                     ]),
                 Actions::make([
                     Action::make('play')
-                    ->label('Play Now')
-                    ->icon('heroicon-o-play')
-                    ->url(fn (Game $record): string => route('game.play', $record->slug))
-                    ->color('primary'),
+                        ->label('Play Now')
+                        ->icon('heroicon-o-play')
+                        ->url(fn(Game $record): string => route('game.play', $record->slug))
+                        ->color('primary'),
                 ])->columnSpanFull()
-                ->alignEnd()
+                    ->alignEnd()
             ]);
     }
 }

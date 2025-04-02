@@ -38,7 +38,11 @@ class GameList extends SimplePage implements HasTable
                     ->searchable(),
                 Tables\Columns\TextColumn::make('category.name')
                     ->sortable()
-                    ->searchable()
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('user.name')
+                    ->label('Author')
+                    ->sortable()
+                    ->searchable(),
             ])
             ->filters([
                 // ...
